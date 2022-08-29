@@ -7,7 +7,11 @@ import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class OrderServiceImpl implements OrderService{
 
     //    private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -17,6 +21,7 @@ public class OrderServiceImpl implements OrderService{
     //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
