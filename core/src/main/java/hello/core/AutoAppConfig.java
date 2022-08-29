@@ -1,5 +1,8 @@
 package hello.core;
 
+import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -13,4 +16,11 @@ import org.springframework.context.annotation.FilterType;
 
 public class AutoAppConfig {
 
+
+  //Overriding bean definition for bean 'memoryMemberRepository' with a different definition:
+ //Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+ @Bean(name = "memoryMemberRepository")
+  public MemberRepository memberRepository() {
+   return new MemoryMemberRepository();
+  }
 }
