@@ -16,11 +16,11 @@ import org.springframework.context.annotation.FilterType;
 
 public class AutoAppConfig {
 
-
   //Overriding bean definition for bean 'memoryMemberRepository' with a different definition:
  //Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
 // @Bean(name = "memoryMemberRepository")
 //  public MemberRepository memberRepository() {
 //   return new MemoryMemberRepository();
 //  }
+
 }
