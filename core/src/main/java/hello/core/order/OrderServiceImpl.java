@@ -13,18 +13,19 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
+//-> 생성자 자동으로 만들어줌
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    //@RequiredArgsConstructor 이게 생성자 자동으로 만들어줌
-//    @Autowired
-//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-//        this.memberRepository = memberRepository;
-//        this.discountPolicy = discountPolicy;
-//    }
+
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
 
 //    수정자 주입
